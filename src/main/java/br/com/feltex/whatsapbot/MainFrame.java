@@ -23,10 +23,12 @@ public class MainFrame extends JFrame{
     private String path = "";
     private Set<String> contacts;
     private  JButton btnScanContacts;
+    private JRadioButton rdBtnOpenChat;
+    private JRadioButton rdBtnSchedule;
+    public ButtonGroup group;
 
     public MainFrame() {
         setResizable(false);
-        setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         setTitle("Turbo Whats App 1.0 By DevLL");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setBounds(100, 100, 662, 462);
@@ -118,6 +120,20 @@ public class MainFrame extends JFrame{
         btnScanContacts.setBorder(UIManager.getBorder("Button.border"));
         btnScanContacts.setBounds(359, 378, 124, 37);
         contentPane.add(btnScanContacts);
+
+        rdBtnOpenChat = new JRadioButton("Buscar nas conversas abertas");
+        rdBtnOpenChat.setSelected(true);
+        rdBtnOpenChat.setActionCommand("Chat");
+        rdBtnOpenChat.setBounds(10, 341, 176, 21);
+        contentPane.add(rdBtnOpenChat);
+
+        rdBtnSchedule = new JRadioButton("Buscar na agenda");
+        rdBtnSchedule.setBounds(189, 341, 161, 21);
+        rdBtnSchedule.setActionCommand("Schedule");
+        contentPane.add(rdBtnSchedule);
+        group = new ButtonGroup();
+        group.add(rdBtnSchedule);
+        group.add(rdBtnOpenChat);
     }
 }
 

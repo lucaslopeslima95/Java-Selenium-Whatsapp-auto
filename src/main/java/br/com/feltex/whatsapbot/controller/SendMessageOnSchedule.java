@@ -2,7 +2,6 @@ package br.com.feltex.whatsapbot.controller;
 
 import br.com.feltex.whatsapbot.model.Message;
 import org.openqa.selenium.*;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashSet;
@@ -10,10 +9,8 @@ import java.util.Set;
 
 
 @RestController
-@RequestMapping(value = "/send")
-public class SendMessage {
-
-
+@RequestMapping(value = "/sendOnSchedule")
+public class SendMessageOnSchedule {
     private final WebDriver webDriver;
     private String positionTopScrollBeforeScrolling = "";
     private String positionTopScrollAfterScrolling = "";
@@ -21,12 +18,13 @@ public class SendMessage {
     private final Set<String> contacts = new LinkedHashSet<>();
 
     @PostMapping
-    public void receiverMessage(@RequestBody Message message) {
+    public void receiverMessageOnSchedule(@RequestBody Message message) {
         scrollToTop();
         for (String contact : message.getContacts()) {
             flag = true;
             do {
                 try {
+                    webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/header/div[2]/div/span/div[2]/div/span")).click();
                     var elementContact = findContact(contact);
 
                     if (elementContact != null) {
@@ -79,16 +77,16 @@ public class SendMessage {
         do{
             try {
                 positionTopScrollBeforeScrolling = getscrollPosition();
-                Thread.sleep(700);
+                Thread.sleep(1000);
                 for (int i = 18; i >= 1; i--) {
                     try {
-                       contacts.add(webDriver.findElement(By.xpath("//*[@id=\"pane-side\"]/div[2]/div/div/div["+i+"]/div/div/div/div[2]/div[1]/div[1]/span/span")).getText());
+                       contacts.add(webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/span/div/span/div/div[2]/div[2]/div/div/div["+i+"]/div/div/div[2]/div[1]/div/span/span")).getText());
                     }catch (Exception e){
                         System.out.println("Causado por: "+e.getMessage());
                     }
 
                 }
-                returnJSExecutor().executeScript("document.querySelector('#pane-side').scrollBy({top: 80 ,left: 0})");
+                returnJSExecutor().executeScript("document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollBy({top: 80 ,left: 0})");
                 positionTopScrollAfterScrolling = getscrollPosition();
                 if(positionTopScrollBeforeScrolling.equals(positionTopScrollAfterScrolling)) {
                     flag = false;
@@ -102,7 +100,7 @@ public class SendMessage {
     }
 
     public  WebElement findContact(String nameContact) {
-        var xPathContact = "//*[@id=\"pane-side\"]/*//span[@title='" + nameContact + "']";
+        var xPathContact = "//*[@id=\"app\"]/*//span[@title='" + nameContact + "']";
         return webDriver.findElement(By.xpath(xPathContact));
     }
 
@@ -112,7 +110,7 @@ public class SendMessage {
     }
 
     public void scrollToTop(){
-        returnJSExecutor().executeScript("document.querySelector('#pane-side').scrollTo({top: 0 ,left: 0})");
+        returnJSExecutor().executeScript("document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollTo({top: 0 ,left: 0})");
     }
 
     public JavascriptExecutor returnJSExecutor(){
@@ -120,13 +118,13 @@ public class SendMessage {
         return js;
     }
     public String getscrollPosition(){
-        return returnJSExecutor().executeScript("return document.querySelector('#pane-side').scrollTop").toString();
+        return returnJSExecutor().executeScript("return document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollTop").toString();
     }
     public void scrollingBy(){
-        returnJSExecutor().executeScript("document.querySelector('#pane-side').scrollBy({top: 99 ,left: 0,behavior: 'smooth'})");
+        returnJSExecutor().executeScript("document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollBy({top: 99 ,left: 0,behavior: 'smooth'})");
     }
 
-    public SendMessage(WebDriver webDriver) {
+    public SendMessageOnSchedule(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
