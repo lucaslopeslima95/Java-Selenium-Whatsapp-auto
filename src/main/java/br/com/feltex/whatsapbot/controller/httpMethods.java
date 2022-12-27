@@ -56,8 +56,6 @@ public class httpMethods {
             e.printStackTrace();
         }
     }
-
-
     public static void getContacts() throws IOException {
         StringBuilder result = new StringBuilder();
         URL url = new URL("http://localhost:8080/send");
@@ -76,7 +74,7 @@ public class httpMethods {
     private static void copy(String listContacts){
         String text ="";
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-        for (String list :listContacts.replaceAll("\"","").split(",")) {
+        for (String list :listContacts.replaceAll("\"","").split("\",")) {
             text += "\n"+list;
         }
         JOptionPane.showMessageDialog(null,"Texto Copiado "+text);
