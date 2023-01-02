@@ -41,17 +41,13 @@ public class httpMethods {
             if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
                 throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
             }
-
             BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-
             String output;
             System.out.println("Output from Server .... \n");
             while ((output = br.readLine()) != null) {
                 System.out.println(output);
             }
-
             conn.disconnect();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -81,8 +77,5 @@ public class httpMethods {
         StringSelection selection = new StringSelection(text);
         clipboard.setContents(selection, null);
     }
-
-
-
 }
 

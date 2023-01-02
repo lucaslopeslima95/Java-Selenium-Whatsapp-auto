@@ -54,9 +54,8 @@ public class SendMessageMethods {
             try {
                 positionTopScrollBeforeScrolling = getscrollPosition();
                 Thread.sleep(700);
-                for (int i = 21; i > 0; i--) {
+                for (int i = 20; i > 0; i--) {
                     try {
-                        System.err.println(webDriver.findElement(By.xpath("//*[@id=\"pane-side\"]/div[2]/div/div/div["+i+"]/div/div/div/div[2]/div[1]/div[1]/span/span")).getText());
                         contacts.add(webDriver.findElement(By.xpath("//*[@id=\"pane-side\"]/div[2]/div/div/div["+i+"]/div/div/div/div[2]/div[1]/div[1]/span/span")).getText());
                     }catch (Exception e){
                         //System.err.println("Causado por: "+e.getMessage());
@@ -93,7 +92,7 @@ public class SendMessageMethods {
         return returnJSExecutor().executeScript("return document.querySelector('#pane-side').scrollTop").toString();
     }
     public void scrollingBy(){
-        returnJSExecutor().executeScript("document.querySelector('#pane-side').scrollBy({top: 99 ,left: 0,behavior: 'smooth'})");
+        returnJSExecutor().executeScript("document.querySelector('#pane-side').scrollBy({top: 99 ,left: 0})");
     }
     public SendMessageMethods(WebDriver webDriver) {
         this.webDriver = webDriver;
