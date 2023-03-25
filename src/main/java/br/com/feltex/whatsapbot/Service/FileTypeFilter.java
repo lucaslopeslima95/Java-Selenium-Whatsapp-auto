@@ -1,4 +1,4 @@
-package br.com.feltex.whatsapbot.service;
+package br.com.feltex.whatsapbot.Service;
 
 import java.io.File;
 import javax.swing.filechooser.FileFilter;

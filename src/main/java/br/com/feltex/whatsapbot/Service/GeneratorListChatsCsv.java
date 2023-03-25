@@ -1,4 +1,4 @@
-package br.com.feltex.whatsapbot.service;
+package br.com.feltex.whatsapbot.Service;
 
 import com.opencsv.CSVWriter;
 
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class GenaratorListChats {
+public class GeneratorListChatsCsv {
 
     public static void receiveNameAndWriteOnFile(String listContacts){
 

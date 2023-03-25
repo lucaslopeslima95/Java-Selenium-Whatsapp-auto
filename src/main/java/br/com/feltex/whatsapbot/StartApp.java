@@ -1,5 +1,6 @@
 package br.com.feltex.whatsapbot;
 
+import br.com.feltex.whatsapbot.View.MainFrame;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

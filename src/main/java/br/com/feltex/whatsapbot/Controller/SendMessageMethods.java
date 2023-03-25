@@ -1,12 +1,10 @@
-package br.com.feltex.whatsapbot.controller;
+package br.com.feltex.whatsapbot.Controller;
 
-import br.com.feltex.whatsapbot.model.Message;
+import br.com.feltex.whatsapbot.Model.Message;
 import org.openqa.selenium.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-
 
 @RestController
 @RequestMapping(value = "/send")

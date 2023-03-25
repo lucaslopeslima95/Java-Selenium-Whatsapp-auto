@@ -1,6 +1,6 @@
-package br.com.feltex.whatsapbot.controller;
+package br.com.feltex.whatsapbot.Controller;
 
-import br.com.feltex.whatsapbot.model.Message;
+import br.com.feltex.whatsapbot.Model.Message;
 
 import org.json.JSONObject;
 
@@ -12,12 +12,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import br.com.feltex.whatsapbot.service.GenaratorListChats;
+import br.com.feltex.whatsapbot.Service.GeneratorListChatsCsv;
 
 import javax.swing.*;
 import java.net.URL;
 
-public class httpMethods {
+public class HttpMethods {
 
     public static void httpRequest(Message message) {
         try {
@@ -64,7 +64,7 @@ public class httpMethods {
             System.out.println("Causado por: "+e.getCause());
         }
         copy(result.toString());
-        GenaratorListChats.receiveNameAndWriteOnFile(result.toString());
+        GeneratorListChatsCsv.receiveNameAndWriteOnFile(result.toString());
     }
 
     private static void copy(String listContacts){

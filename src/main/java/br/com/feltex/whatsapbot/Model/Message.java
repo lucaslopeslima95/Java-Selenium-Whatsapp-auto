@@ -1,4 +1,4 @@
-package br.com.feltex.whatsapbot.model;
+package br.com.feltex.whatsapbot.Model;
 
 
 import java.util.Objects;

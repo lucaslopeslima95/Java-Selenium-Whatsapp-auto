@@ -1,13 +1,8 @@
-package br.com.feltex.whatsapbot.controller;
+package br.com.feltex.whatsapbot.Controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-
-import java.util.Set;
 
 class EnviaMensagemTest {
     private TestRestTemplate restTemplate = new TestRestTemplate();
