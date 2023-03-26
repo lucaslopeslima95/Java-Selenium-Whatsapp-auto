@@ -1,23 +1,9 @@
 package br.com.feltex.whatsapbot.View;
 
-import br.com.feltex.whatsapbot.Controller.HttpMethods;
-import br.com.feltex.whatsapbot.Service.FileTypeFilter;
-import br.com.feltex.whatsapbot.View.PanelBookMessage;
-import br.com.feltex.whatsapbot.View.PanelSendMessage;
-import br.com.feltex.whatsapbot.View.PanelShowSchedule;
-import com.toedter.calendar.JCalendar;
-import com.toedter.calendar.JDateChooser;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.filechooser.FileFilter;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+
 
 
 public class MainFrame extends JFrame {
@@ -65,25 +51,28 @@ public class MainFrame extends JFrame {
 
         btnSelectMenuSendMessage = new JButton("Enviar Mensagens");
         btnSelectMenuSendMessage.addActionListener(e -> {
-            cl.show(mainPanel,"1");
+            showPanel(mainPanel,"1");
         });
         btnSelectMenuSendMessage.setFont(new Font("Arial", Font.PLAIN, 12));
         toolBar.add(btnSelectMenuSendMessage);
 
         btnScheduling = new JButton("Agendar Envios");
         btnScheduling.addActionListener( e-> {
-            cl.show(mainPanel,"2");
+            showPanel(mainPanel,"2");
         });
         btnScheduling.setFont(new Font("Arial", Font.PLAIN, 12));
         toolBar.add(btnScheduling);
 
         btnShowSchedule = new JButton("Verificar Agenda");
         btnShowSchedule.addActionListener(e -> {
-            cl.show(mainPanel,"3");
+            showPanel(mainPanel,"3");
         });
         btnShowSchedule.setFont(new Font("Arial", Font.PLAIN, 12));
         toolBar.add(btnShowSchedule);
 
-        cl.show(mainPanel,"1");
+        showPanel(mainPanel,"1");
+    }
+    public void showPanel( JPanel jPanel,String numberPanel){
+        cl.show(jPanel,numberPanel);
     }
 }
