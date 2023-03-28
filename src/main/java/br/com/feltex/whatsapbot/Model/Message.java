@@ -11,7 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Message {
-    private Set<Contact> contacts;
+    private Set<String> contacts;
     private String content;
     private String pathImage;
 }

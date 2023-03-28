@@ -5,22 +5,26 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.List;
+import java.util.UUID;
+
+import javax.persistence.*;
+
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document
+@Entity
 public class Contact {
 
-    @Id
-    private String id;
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID Id;
     private String name;
     private LocalDateTime scheduled;
     private String number;
-    private String link ;
-
+    @OneToMany(mappedBy = "schedule", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
+    private List<Schedule> scheduleList;
 
 }
