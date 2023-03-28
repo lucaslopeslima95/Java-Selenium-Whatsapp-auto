@@ -24,11 +24,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.0.4</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20220924</version>
+            <version>20230227</version>
         </dependency>
         <dependency>
             <groupId>com.formdev</groupId>
@@ -38,12 +39,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.0.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>4.8.1</version>
         </dependency>
         <dependency>
             <groupId>com.opencsv</groupId>
@@ -55,6 +57,17 @@
             <artifactId>jcalendar</artifactId>
             <version>1.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+           <!-- <scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>${project.name}</finalName>
