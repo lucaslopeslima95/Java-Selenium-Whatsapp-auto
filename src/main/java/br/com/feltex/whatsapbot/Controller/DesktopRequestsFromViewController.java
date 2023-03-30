@@ -2,6 +2,7 @@ package br.com.feltex.whatsapbot.Controller;
 
 import br.com.feltex.whatsapbot.Model.Message;
 
+import br.com.feltex.whatsapbot.Service.GeneratorListChatsCsv;
 import org.json.JSONObject;
 
 import java.awt.*;
@@ -12,14 +13,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import br.com.feltex.whatsapbot.Service.GeneratorListChatsCsv;
 
 import javax.swing.*;
 import java.net.URL;
 
-public class HttpMethods {
+public class DesktopRequestsFromViewController {
 
-    public static void httpRequest(Message message) {
+    public static void sendRequestToBackend(Message message) {
         try {
 
             URL url = new URL("http://localhost:8080/send");
@@ -32,7 +32,6 @@ public class HttpMethods {
             input.put("content", message.getContent());
             input.put("contacts", message.getContacts());
             input.put("pathImage",message.getPathImage());
-
 
             OutputStream os = conn.getOutputStream();
             os.write(input.toString().getBytes());
