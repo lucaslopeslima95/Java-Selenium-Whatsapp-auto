@@ -1,4 +1,4 @@
-package br.com.feltex.whatsapbot.Service;
+package br.com.feltex.whatsapbot.Controller;
 
 import br.com.feltex.whatsapbot.Model.Message;
 import org.openqa.selenium.*;
@@ -8,7 +8,11 @@ import java.util.Set;
 
 @RestController
 @RequestMapping(value = "/send")
-public class SendMessageBackend {
+public class ReceiveRequestAndSendToBackend {
+
+    public ReceiveRequestAndSendToBackend(WebDriver webDriver) {
+        this.webDriver = webDriver;
+    }
 
     private final WebDriver webDriver;
     private String positionTopScrollBeforeScrolling = "";
@@ -135,9 +139,7 @@ public class SendMessageBackend {
     public void scrollingBy(){
         returnJSExecutor().executeScript("document.querySelector('#pane-side').scrollBy({top: 99 ,left: 0})");
     }
-    public SendMessageBackend(WebDriver webDriver) {
-        this.webDriver = webDriver;
-    }
+
 
     public  WebElement findContactSchedule(String nameContact) {
         var xPathContact = "//div[@id='app']/*//div[@role='button']/*//span[@title='"+nameContact+"']";

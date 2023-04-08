@@ -16,8 +16,7 @@ import java.net.HttpURLConnection;
 
 import javax.swing.*;
 import java.net.URL;
-
-public class DesktopRequestsFromViewController {
+public class HttpRequestsFromViewController {
 
     public static void sendRequestToBackend(Message message) {
         try {

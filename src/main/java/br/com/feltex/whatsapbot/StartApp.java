@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+
 import javax.swing.*;
 
 @SpringBootApplication
@@ -26,7 +27,6 @@ public class StartApp {
         Runtime.getRuntime();
     }
 
-
     @Bean
     public WebDriver webDriver() {
         System.out.println("Instanciando o Seleniun webdriver");
@@ -37,4 +37,5 @@ public class StartApp {
         webDriver.get("https://web.whatsapp.com/");
         return webDriver;
     }
+
 }

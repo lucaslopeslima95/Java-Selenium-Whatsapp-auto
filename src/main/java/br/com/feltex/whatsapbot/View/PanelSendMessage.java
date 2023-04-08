@@ -1,6 +1,6 @@
 package br.com.feltex.whatsapbot.View;
 
-import br.com.feltex.whatsapbot.Controller.DesktopRequestsFromViewController;
+import br.com.feltex.whatsapbot.Controller.HttpRequestsFromViewController;
 import br.com.feltex.whatsapbot.Model.Message;
 import br.com.feltex.whatsapbot.Service.FileTypeFilter;
 
@@ -67,7 +67,7 @@ public class PanelSendMessage extends JPanel{
         btnScanContacts.addActionListener(e -> {
 
             try {
-                DesktopRequestsFromViewController.getContacts();
+                HttpRequestsFromViewController.getContacts();
             } catch (IOException ex) {
                 throw new RuntimeException("Causado por: "+ex.getCause());
             }
@@ -83,7 +83,7 @@ public class PanelSendMessage extends JPanel{
         for (String line : txtContacts.getText().split("\\n")) {
             contacts.add(line);
         }
-        DesktopRequestsFromViewController.sendRequestToBackend(new Message(contacts, txtMessage.getText(),path));
+        HttpRequestsFromViewController.sendRequestToBackend(new Message(contacts, txtMessage.getText(),path));
     }
     public void choosePhoto(){
         JFileChooser jFileChooser = new JFileChooser();
