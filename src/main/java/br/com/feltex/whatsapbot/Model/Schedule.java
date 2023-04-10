@@ -5,7 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.UUID;
 
 @Data
@@ -18,7 +19,8 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID Id;
     private String message;
-    private LocalDateTime localDateTime;
+    private LocalDate localDate;
+    private LocalTime localTime;
     @ManyToOne
     @JoinColumn(name = "id_contact")
     private Contact contact;

@@ -1,4 +1,4 @@
-package br.com.feltex.whatsapbot.View;
+package br.com.feltex.whatsapbot.ViewDesktop;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

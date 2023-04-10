@@ -1,13 +1,13 @@
-package br.com.feltex.whatsapbot.Service;
+package br.com.feltex.whatsapbot.ServiceImpl;
 
 import java.io.File;
 import javax.swing.filechooser.FileFilter;
 
-public class FileTypeFilter extends FileFilter {
+public class FileTypeFilterService extends FileFilter {
     private String extension;
     private String description;
 
-    public FileTypeFilter(String extension, String description) {
+    public FileTypeFilterService(String extension, String description) {
         this.extension = extension;
         this.description = description;
     }

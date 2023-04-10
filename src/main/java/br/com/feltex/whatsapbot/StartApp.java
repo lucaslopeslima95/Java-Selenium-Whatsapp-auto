@@ -1,6 +1,6 @@
 package br.com.feltex.whatsapbot;
 
-import br.com.feltex.whatsapbot.View.MainFrame;
+import br.com.feltex.whatsapbot.ViewDesktop.MainFrame;
 import com.formdev.flatlaf.FlatLightLaf;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

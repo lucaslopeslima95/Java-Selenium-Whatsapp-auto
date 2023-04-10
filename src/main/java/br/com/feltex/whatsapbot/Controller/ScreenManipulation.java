@@ -8,9 +8,9 @@ import java.util.Set;
 
 @RestController
 @RequestMapping(value = "/send")
-public class ReceiveRequestAndSendToBackend {
+public class ScreenManipulation {
 
-    public ReceiveRequestAndSendToBackend(WebDriver webDriver) {
+    public ScreenManipulation(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
@@ -140,7 +140,6 @@ public class ReceiveRequestAndSendToBackend {
         returnJSExecutor().executeScript("document.querySelector('#pane-side').scrollBy({top: 99 ,left: 0})");
     }
 
-
     public  WebElement findContactSchedule(String nameContact) {
         var xPathContact = "//div[@id='app']/*//div[@role='button']/*//span[@title='"+nameContact+"']";
         return webDriver.findElement(By.xpath(xPathContact));
@@ -154,5 +153,4 @@ public class ReceiveRequestAndSendToBackend {
     public String getScrollPositionSchedule(){
         return returnJSExecutor().executeScript("return  document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollTop").toString();
     }
-
 }

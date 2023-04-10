@@ -1,4 +1,4 @@
-package br.com.feltex.whatsapbot.View;
+package br.com.feltex.whatsapbot.ViewDesktop;
 
 import com.toedter.calendar.JDateChooser;
 

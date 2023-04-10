@@ -1,8 +1,8 @@
-package br.com.feltex.whatsapbot.View;
+package br.com.feltex.whatsapbot.ViewDesktop;
 
-import br.com.feltex.whatsapbot.Controller.HttpRequestsFromViewController;
+import br.com.feltex.whatsapbot.ViewDesktop.ControllerDesktopMethods.HttpRequestsFromViewController;
 import br.com.feltex.whatsapbot.Model.Message;
-import br.com.feltex.whatsapbot.Service.FileTypeFilter;
+import br.com.feltex.whatsapbot.ServiceImpl.FileTypeFilterService;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -87,10 +87,10 @@ public class PanelSendMessage extends JPanel{
     }
     public void choosePhoto(){
         JFileChooser jFileChooser = new JFileChooser();
-        FileFilter pdfFilter = new FileTypeFilter(".png", "Imagens");
-        FileFilter jpegFilter = new FileTypeFilter(".jpeg", "Fotos");
-        FileFilter xlsFilter = new FileTypeFilter(".bmp", "Icon");
-        FileFilter gifFilter = new FileTypeFilter(".gif", "Gif");
+        FileFilter pdfFilter = new FileTypeFilterService(".png", "Imagens");
+        FileFilter jpegFilter = new FileTypeFilterService(".jpeg", "Fotos");
+        FileFilter xlsFilter = new FileTypeFilterService(".bmp", "Icon");
+        FileFilter gifFilter = new FileTypeFilterService(".gif", "Gif");
         jFileChooser.addChoosableFileFilter(pdfFilter);
         jFileChooser.addChoosableFileFilter(jpegFilter);
         jFileChooser.addChoosableFileFilter(xlsFilter);

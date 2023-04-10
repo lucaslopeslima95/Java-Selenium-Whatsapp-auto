@@ -1,8 +1,8 @@
-package br.com.feltex.whatsapbot.Controller;
+package br.com.feltex.whatsapbot.ViewDesktop.ControllerDesktopMethods;
 
 import br.com.feltex.whatsapbot.Model.Message;
 
-import br.com.feltex.whatsapbot.Service.GeneratorListChatsCsv;
+import br.com.feltex.whatsapbot.ServiceImpl.GeneratorListChatsCsvService;
 import org.json.JSONObject;
 
 import java.awt.*;
@@ -62,7 +62,7 @@ public class HttpRequestsFromViewController {
             System.out.println("Causado por: "+e.getCause());
         }
         copy(result.toString());
-        GeneratorListChatsCsv.receiveNameAndWriteOnFile(result.toString());
+        GeneratorListChatsCsvService.receiveNameAndWriteOnFile(result.toString());
     }
 
     private static void copy(String listContacts){
