@@ -28,7 +28,7 @@ public class StartApp {
     }
 
     @Bean
-    public WebDriver webDriver() {
+    public static WebDriver webDriver() {
         System.out.println("Instanciando o Seleniun webdriver");
         System.setProperty("webdriver.chrome.driver", "Features/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
