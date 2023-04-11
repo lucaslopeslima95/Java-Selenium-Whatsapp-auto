@@ -22,7 +22,7 @@ public class Contact {
     private UUID Id;
     private String name;
     private String number;
-    @OneToMany(mappedBy = "schedule", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "Id", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
     private List<Schedule> scheduleList;
 
 }

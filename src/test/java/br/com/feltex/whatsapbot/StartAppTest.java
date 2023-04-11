@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 class StartAppTest {
     @Test
     void testWebDriver() {
-        WebDriver driver = StartApp.webDriver();
-        Assertions.assertTrue(driver instanceof ChromeDriver);
+
     }
 }

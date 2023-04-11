@@ -10,15 +10,16 @@ import java.util.Set;
 @RequestMapping(value = "/send")
 public class ScreenManipulation {
 
-    public ScreenManipulation(WebDriver webDriver) {
-        this.webDriver = webDriver;
-    }
-
     private final WebDriver webDriver;
     private String positionTopScrollBeforeScrolling = "";
     private String positionTopScrollAfterScrolling = "";
     boolean flag = true;
     private final Set<String> contacts = new LinkedHashSet<>();
+
+    public ScreenManipulation(WebDriver webDriver) {
+        this.webDriver = webDriver;
+    }
+
 
     @PostMapping
     public void receiverMessage(@RequestBody Message message)  {
