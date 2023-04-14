@@ -52,7 +52,6 @@ public class HttpRequestsFromViewController {
     }
 
 
-
     public static void getContacts() throws IOException {
         StringBuilder result = new StringBuilder();
         URL url = new URL("http://localhost:8080/send");

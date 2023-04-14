@@ -23,7 +23,6 @@ public class PanelSendMessage extends JPanel{
         add(lblContacts);
 
         btnSend = new JButton("Enviar");
-        btnSend.setEnabled(false);
         btnSend.addActionListener(e -> sendMessage());
         btnSend.setBorder(UIManager.getBorder("Button.border"));
         btnSend.setBounds(20, 345, 124, 37);
@@ -63,7 +62,7 @@ public class PanelSendMessage extends JPanel{
         txtMessage.setLineWrap(true);
         spMessage.setViewportView(txtMessage);
 
-        btnScanContacts = new JButton("Scan Chats");
+        btnScanContacts = new JButton("Generate CSV");
         btnScanContacts.addActionListener(e -> {
 
             try {
@@ -82,9 +81,13 @@ public class PanelSendMessage extends JPanel{
         contacts = new LinkedHashSet<>();
         for (String line : txtContacts.getText().split("\\n")) {
             contacts.add(line);
-            System.out.println(line);
         }
-        HttpRequestsFromViewController.sendRequestToBackend(new Message(contacts, txtMessage.getText(),path));
+        if(path.isEmpty()){
+            HttpRequestsFromViewController.sendRequestToBackend(new Message(contacts, txtMessage.getText(),""));
+        }else{
+            HttpRequestsFromViewController.sendRequestToBackend(new Message(contacts, txtMessage.getText(),path));
+        }
+
     }
     public void choosePhoto(){
         JFileChooser jFileChooser = new JFileChooser();
@@ -102,7 +105,6 @@ public class PanelSendMessage extends JPanel{
         if (retort == JFileChooser.APPROVE_OPTION) {
             path = jFileChooser.getSelectedFile().getAbsolutePath();
             btnStart.setEnabled(false);
-            btnSend.setEnabled(true);
         }
 
     }
