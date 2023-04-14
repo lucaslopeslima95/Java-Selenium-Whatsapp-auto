@@ -82,6 +82,7 @@ public class PanelSendMessage extends JPanel{
         contacts = new LinkedHashSet<>();
         for (String line : txtContacts.getText().split("\\n")) {
             contacts.add(line);
+            System.out.println(line);
         }
         HttpRequestsFromViewController.sendRequestToBackend(new Message(contacts, txtMessage.getText(),path));
     }

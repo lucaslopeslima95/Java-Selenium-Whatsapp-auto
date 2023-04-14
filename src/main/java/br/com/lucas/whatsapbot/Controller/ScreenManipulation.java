@@ -92,7 +92,6 @@ public class ScreenManipulation {
                 .sendKeys(message.getPathImage().replaceAll("\\\\", "/"));
         Thread.sleep(1500);
         webDriver.findElement(By.xpath("//*[@id='app']/*//span[@data-icon='send']")).click();
-        Thread.sleep(180*1000);
         return true;
     }
 
