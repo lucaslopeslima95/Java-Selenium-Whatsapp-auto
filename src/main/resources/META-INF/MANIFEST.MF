@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: br.com.feltex.whatsapbot.StartApp
+Main-Class: br.com.lucas.whatsapbot.StartApp
 Class-Path: commons-text-1.10.0.jar snakeyaml-1.28.jar selenium-edge-dri
  ver-3.141.59.jar spring-core-5.3.10.jar slf4j-api-1.7.32.jar guava-25.0
  -jre.jar selenium-opera-driver-3.141.59.jar tomcat-embed-el-9.0.53.jar 

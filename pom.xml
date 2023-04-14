@@ -75,6 +75,19 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>5.2.3.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-gson</artifactId>
+            <version>12.2</version>
+        </dependency>
+
+
     </dependencies>
     <build>
         <finalName>${project.name}</finalName>
@@ -95,7 +108,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>br.com.feltex.whatsapbot.StartApp</mainClass>
+                            <mainClass>br.com.lucas.whatsapbot.StartApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
