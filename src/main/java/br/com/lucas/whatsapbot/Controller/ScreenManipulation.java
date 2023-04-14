@@ -143,6 +143,7 @@ public class ScreenManipulation {
     public String[] returnArrChar(Message message){
         char[] arr = message.getContent().toCharArray();
         String[] strArr = new String[arr.length];
+        for (int i =0;i<arr.length;i++) {
             strArr[i] = String.valueOf(arr[i]);
         }
         return strArr;
