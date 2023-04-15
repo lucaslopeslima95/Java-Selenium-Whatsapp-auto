@@ -1,6 +1,7 @@
 package br.com.lucas.whatsapbot.Controller;
 
 import br.com.lucas.whatsapbot.Model.Message;
+import br.com.lucas.whatsapbot.ServiceImpl.ScriptsForManipulationNavigator;
 import br.com.lucas.whatsapbot.WebDriver.WebDriverFactory;
 import org.openqa.selenium.*;
 import org.springframework.web.bind.annotation.*;
@@ -53,8 +54,7 @@ public class ScreenManipulation {
     @GetMapping
     public Set<String> requestContactsNames() {
         JavascriptExecutor js = returnJSExecutor();
-        js.executeScript("function newButton(text, callback, position) { var a = document.createElement('button'); (a.innerHTML = text), (a.style.backgroundColor = '#44c767'), (a.style.backgroundImage = 'linear-gradient(#44c767, #64e787)'), (a.style.borderRadius = '28px'), (a.style.border = '1px solid #18ab29'), (a.style.display = 'inline-block'), (a.style.color = '#ffffff'), (a.style.fontSize = '17px'), (a.style.padding = '11px 31px'), (a.style.position = 'fixed'), (a.style.right = ' + (10 + ((150 + 15) * (position -1))) + px'), (a.style.width = '150px'), (a.style.top = '7px'), (a.style.zIndex = '999'); var b = document.getElementsByTagName('body')[0]; b.appendChild(a), a.addEventListener('click', function() { callback() }) } function getContent() { var content = ''; for(a in window.sContacts) content += `${a}\n`; return content; } function init() { newButton('Download', () => { download(getContent()) }, 1); getNumbers(); document.querySelector('#pane-side').addEventListener('scroll', getNumbers); } function download(content) { var data = 'data:application/octet-stream,' + encodeURIComponent(content); var newWindow = window.open(data, 'file'); } function getNumbers() { if(window.sContacts === undefined) window.sContacts = []; document.querySelectorAll('#pane-side div[role=grid] div[role=row] > div:first-child div:nth-child(2) div:first-child > div:first-child').forEach( element => { var phone = ''; if(/^((\\+| |-|\\d)+$)/g.test(element.innerText)) phone = element.innerText; else if(/^((\\+| |-|\\d)+$)/g.test(element.title)) phone = element.title; if(phone !== '') { window.sContacts[phone] = phone; element.style.backgroundColor = '#00ff00'; } else { element.style.backgroundColor = 'inherit'; } }) } init();");
-
+        js.executeScript(ScriptsForManipulationNavigator.loadContactsNonSaved());
         flag = true;
         scrollToTop();
         do{
@@ -155,13 +155,13 @@ public class ScreenManipulation {
         return webDriver.findElement(By.xpath(xPathContact));
     }
     public void scrollingBySchedule(){
-        returnJSExecutor().executeScript("document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollBy({top: 99 ,left: 0})");
+        returnJSExecutor().executeScript(ScriptsForManipulationNavigator.scrollSchedule());
     }
     public void scrollToTopSchedule(){
-        returnJSExecutor().executeScript("document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollTo({top: 0 ,left: 0})");
+        returnJSExecutor().executeScript(ScriptsForManipulationNavigator.scrollTopSchedule());
     }
     public String getScrollPositionSchedule(){
-        return returnJSExecutor().executeScript("return  document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollTop").toString();
+        return returnJSExecutor().executeScript(ScriptsForManipulationNavigator.getScrollSchedulePosition()).toString();
     }
 
     public String[] returnArrChar(Message message){
