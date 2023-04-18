@@ -105,7 +105,8 @@ public class ScreenManipulation {
     }
 
     public void sendMessageFromScheduleScreen(Message message, String contact){
-        webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/header/div[2]/div/span/div[2]/div/span")).click();
+        webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[4]/header/div[2]/div/span/div[3]/div/span")).click();
+
         do {
             try {
                 var elementContact = findContactSchedule(contact);
