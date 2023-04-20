@@ -3,9 +3,8 @@ package br.com.lucas.whatsapbot.ViewDesktop;
 import com.toedter.calendar.JCalendar;
 
 import javax.swing.*;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.text.SimpleDateFormat;
+
+
 
 public class PanelShowSchedule extends JPanel {
 
@@ -27,16 +26,12 @@ public class PanelShowSchedule extends JPanel {
     }
 
     private void addCalendarDayListener() {
-        calendar.getDayChooser().addPropertyChangeListener("day", new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent e) {
-                showMessageDialog();
-            }
-        });
+        calendar.getDayChooser().addPropertyChangeListener("day", e -> showMessageDialog());
     }
 
     private void showMessageDialog() {
-        String formattedDate = new SimpleDateFormat("dd/MM/yyyy").format(calendar.getDate());
-        JOptionPane.showMessageDialog(null, formattedDate);
+        //String formattedDate = new SimpleDateFormat("dd/MM/yyyy").format(calendar.getDate());
+        ScreenForBooking screenForBooking = new ScreenForBooking();
+        screenForBooking.setVisible(true);
     }
 }
