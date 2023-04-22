@@ -19,8 +19,8 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID Id;
     private String message;
-    private LocalDate localDate;
-    private LocalTime localTime;
+    private LocalDate date;
+    private LocalTime hour;
     @ManyToOne
     @JoinColumn(name = "id_contact")
     private Contact contact;

@@ -3,7 +3,7 @@ package br.com.lucas.whatsapbot.ViewDesktop;
 import com.toedter.calendar.JCalendar;
 
 import javax.swing.*;
-
+import java.text.SimpleDateFormat;
 
 
 public class PanelShowSchedule extends JPanel {
@@ -30,8 +30,7 @@ public class PanelShowSchedule extends JPanel {
     }
 
     private void showMessageDialog() {
-        //String formattedDate = new SimpleDateFormat("dd/MM/yyyy").format(calendar.getDate());
-        ScreenForBooking screenForBooking = new ScreenForBooking();
+        ScreenForBooking screenForBooking = new ScreenForBooking(calendar.getDate());
         screenForBooking.setVisible(true);
     }
 }

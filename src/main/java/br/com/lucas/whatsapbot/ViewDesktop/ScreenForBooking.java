@@ -1,6 +1,9 @@
 package br.com.lucas.whatsapbot.ViewDesktop;
 
 
+import br.com.lucas.whatsapbot.DTO.ScheduleDTO;
+import br.com.lucas.whatsapbot.ViewDesktop.ControllerDesktopMethods.HttpRequestsFromViewController;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -12,15 +15,21 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Optional;
 
 
 public class ScreenForBooking extends JFrame {
-
     private JTable table;
     private String[][] data;
+    private Date dateSelected;
 
-    public ScreenForBooking() {
+    public ScreenForBooking(Date date) {
+        this.dateSelected = date;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Horários");
         createTableData();
@@ -70,15 +79,15 @@ public class ScreenForBooking extends JFrame {
                 int row = table.rowAtPoint(e.getPoint());
                 if (row >= 0) {
                     String time = (String) table.getValueAt(row, 0);
-                    showInputDialog(time);
+                    getHourSelected(time);
                 }
             }
         });
     }
 
-    private void showInputDialog(String time) {
+    private void getHourSelected(String time) {
         Optional<String> celularInput = Optional.ofNullable(
-                JOptionPane.showInputDialog(ScreenForBooking.this, "Digite o número de celular:")
+                JOptionPane.showInputDialog(null, "Digite o número de celular:","",1)
         );
 
         celularInput.ifPresent(celular -> {
@@ -86,15 +95,16 @@ public class ScreenForBooking extends JFrame {
         });
     }
 
-    private void showTextInputDialog(String time, String celular) {
+    private void showTextInputDialog(String hour, String phone) {
+        LocalTime localTime = LocalTime.parse(hour, DateTimeFormatter.ofPattern("HH:mm"));
+        LocalDate localDate = dateSelected.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         Optional<String> textoInput = Optional.ofNullable(
-                JOptionPane.showInputDialog(ScreenForBooking.this, "Digite o Mensagem:")
+                JOptionPane.showInputDialog(null, "Digite o Mensagem:")
         );
 
         textoInput.ifPresent(texto -> {
-            System.out.println("Horário: " + time);
-            System.out.println("Celular: " + celular);
-            System.out.println("Texto: " + texto);
+            HttpRequestsFromViewController.saveSchedule(new ScheduleDTO(localDate,localTime,texto));
+            dispose();
         });
     }
 
@@ -112,4 +122,3 @@ public class ScreenForBooking extends JFrame {
         };
     }
 }
-
