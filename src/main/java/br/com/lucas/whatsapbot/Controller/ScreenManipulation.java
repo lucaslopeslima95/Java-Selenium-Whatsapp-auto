@@ -82,9 +82,9 @@ public class ScreenManipulation {
     }
 
     public boolean doSequenceToSendMessageOnChatScreen(Message message) throws InterruptedException {
+        Thread.sleep(1500);
         var canvasMessage = findBoxText();
         Thread.sleep(1500);
-
         for(int i=0;i< returnArrChar(message).length;i++){
             canvasMessage.sendKeys(returnArrChar(message)[i]);
             Thread.sleep(500);
@@ -111,9 +111,9 @@ public class ScreenManipulation {
             try {
                 var elementContact = findContactSchedule(contact);
                 elementContact.click();
-                Thread.sleep(3000);
                 if (doSequenceToSendMessageOnChatScreen(message)){
                     flag = false;
+                    break;
                 }
 
             } catch (Exception f) {
@@ -123,14 +123,15 @@ public class ScreenManipulation {
                 positionTopScrollAfterScrolling = getScrollPositionSchedule();
 
                 if (positionTopScrollBeforeScrolling.equals(positionTopScrollAfterScrolling)) {
-                    webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/span/div/span/div/header/div/div[1]/div/span")).click();
                     flag = false;
+                    //webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div[1]/span/div/span/div/header/div/div[1]/div/span")).click();
+
                 }
             }
         } while (flag);
     }
     public  WebElement findContact(String nameContact) {
-        var xPathContact = "//*[@id=\"pane-side\"]/*//span[@title='" + nameContact + "']";
+        var xPathContact = "//*[@id=\"pane-side\"]/*//span[@title='" + nameContact.trim() + "']";
         return webDriver.findElement(By.xpath(xPathContact));
     }
     public WebElement findBoxText() {
@@ -152,7 +153,7 @@ public class ScreenManipulation {
     }
 
     public  WebElement findContactSchedule(String nameContact) {
-        var xPathContact = "//div[@id='app']/*//div[@role='button']/*//span[@title='"+nameContact+"']";
+        var xPathContact = "//div[@id='app']/*//div[@role='button']/*//span[@title='"+nameContact.trim()+"']";
         return webDriver.findElement(By.xpath(xPathContact));
     }
     public void scrollingBySchedule(){

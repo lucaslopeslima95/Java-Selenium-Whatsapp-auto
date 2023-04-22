@@ -22,14 +22,14 @@ public class ScriptsForManipulationNavigator {
         return script;
     }
     public static String scrollSchedule(){
-        return "document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollBy({top: 99 ,left: 0})";
+        return "return document.querySelector('div.g0rxnol2:nth-child(3)').scrollBy({top: 99 ,left: 0})";
 
     }
     public static String scrollTopSchedule(){
-        return "document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollTo({top: 0 ,left: 0})";
+        return "return document.querySelector('div.g0rxnol2:nth-child(3)').scrollTo({top: 0 ,left: 0})";
     }
     public static String getScrollSchedulePosition(){
-        return "return  document.querySelector('#app > div > div > div._2QgSC > div._2Ts6i._3RGKj._318SY > span > div > span > div > div._3Bc7H.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj').scrollTop";
+        return "return document.querySelector('div.g0rxnol2:nth-child(3)').scrollTop";
 
     }
 }

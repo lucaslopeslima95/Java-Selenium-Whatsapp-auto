@@ -18,9 +18,7 @@ public class WhatsAppWebDriver extends ChromeDriver {
     private void startSaveCookiesThread() {
         saveCookiesThread = new Thread(() -> {
             try {
-                System.out.println(1);
                 Thread.sleep(60000); // atraso de 1 minuto
-                System.out.println(2);
             } catch (InterruptedException e) {
                 System.out.println("A thread de salvamento de cookies foi interrompida.");
                 return;

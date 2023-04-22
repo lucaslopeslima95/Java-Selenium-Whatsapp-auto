@@ -89,7 +89,7 @@ public class HttpRequestsFromViewController {
             os.write(input.toString().getBytes());
             os.flush();
 
-            if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
             }
             BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
