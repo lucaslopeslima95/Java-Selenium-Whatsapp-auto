@@ -6,21 +6,33 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ScriptsForManipulationNavigator {
+    private static String script = "";
     public static String loadContactsNonSaved(){
-        String script = "";
-        try {
-            File file = new File("Features/salvaContatosNãoSalvos.js");
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+        File file = new File("Features/salvaContatosNãoSalvos.js");
+        script = "";
+        try (BufferedReader reader = new BufferedReader(new FileReader(file));){
             String line;
             while ((line = reader.readLine()) != null) {
                 script += line;
             }
-            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return script;
     }
+    public static String saveSession(){
+        File file = new File("Features/saveSession.js");
+        try (BufferedReader reader = new BufferedReader(new FileReader(file));){
+            String line;
+            while ((line = reader.readLine()) != null) {
+                script += line;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return script;
+    }
+
     public static String scrollSchedule(){
         return "return document.querySelector('div.g0rxnol2:nth-child(3)').scrollBy({top: 99 ,left: 0})";
 

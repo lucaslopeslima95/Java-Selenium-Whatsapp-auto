@@ -20,6 +20,7 @@ public class ScreenManipulation {
 
     public ScreenManipulation() {
         this.webDriver = WebDriverFactory.webDriver();
+
     }
 
 
@@ -164,6 +165,10 @@ public class ScreenManipulation {
     }
     public String getScrollPositionSchedule(){
         return returnJSExecutor().executeScript(ScriptsForManipulationNavigator.getScrollSchedulePosition()).toString();
+    }
+
+    public void saveSession(){
+        returnJSExecutor().executeScript(ScriptsForManipulationNavigator.saveSession());
     }
 
     public String[] returnArrChar(Message message){
