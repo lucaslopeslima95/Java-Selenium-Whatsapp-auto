@@ -1,27 +1,57 @@
 Manifest-Version: 1.0
 Main-Class: br.com.lucas.whatsapbot.StartApp
-Class-Path: commons-text-1.10.0.jar snakeyaml-1.28.jar selenium-edge-dri
- ver-3.141.59.jar spring-core-5.3.10.jar slf4j-api-1.7.32.jar guava-25.0
- -jre.jar selenium-opera-driver-3.141.59.jar tomcat-embed-el-9.0.53.jar 
- commons-exec-1.3.jar spring-boot-2.5.5.jar log4j-api-2.14.1.jar spring-
- boot-starter-json-2.5.5.jar selenium-chrome-driver-3.141.59.jar spring-
- web-5.3.10.jar opencsv-5.7.1.jar selenium-firefox-driver-3.141.59.jar o
- kio-1.14.0.jar jackson-core-2.12.5.jar selenium-ie-driver-3.141.59.jar 
- spring-boot-autoconfigure-2.5.5.jar jackson-datatype-jsr310-2.12.5.jar 
- jackson-module-parameter-names-2.12.5.jar commons-collections4-4.4.jar 
- selenium-java-3.141.59.jar jackson-datatype-jdk8-2.12.5.jar spring-boot
- -starter-web-2.5.5.jar logback-core-1.2.6.jar jackson-databind-2.12.5.j
- ar spring-context-5.3.10.jar spring-aop-5.3.10.jar spring-boot-starter-
- 2.5.5.jar j2objc-annotations-1.1.jar logback-classic-1.2.6.jar jakarta.
- annotation-api-1.3.5.jar selenium-safari-driver-3.141.59.jar tomcat-emb
- ed-websocket-9.0.53.jar animal-sniffer-annotations-1.14.jar jul-to-slf4
- j-1.7.32.jar selenium-remote-driver-3.141.59.jar spring-boot-starter-to
- mcat-2.5.5.jar selenium-support-3.141.59.jar commons-beanutils-1.9.4.ja
- r spring-webmvc-5.3.10.jar commons-logging-1.2.jar okhttp-3.14.9.jar ja
- ckson-annotations-2.12.5.jar selenium-api-3.141.59.jar commons-lang3-3.
- 12.0.jar spring-beans-5.3.10.jar jsr305-1.3.9.jar byte-buddy-1.10.22.ja
- r tomcat-embed-core-9.0.53.jar checker-compat-qual-2.0.0.jar json-20220
- 924.jar spring-expression-5.3.10.jar commons-collections-3.2.2.jar erro
- r_prone_annotations-2.1.3.jar spring-jcl-5.3.10.jar spring-boot-starter
- -logging-2.5.5.jar log4j-to-slf4j-2.14.1.jar
+Class-Path: selenium-java-3.141.59.jar spring-boot-starter-web-2.5.5.jar
+  jakarta.xml.bind-api-2.3.3.jar jakarta.transaction-api-1.3.3.jar sprin
+ g-boot-starter-data-jpa-2.5.5.jar httpcore5-h2-5.1.1.jar txw2-2.3.5.jar
+  spring-cloud-commons-4.0.2.jar jackson-datatype-jdk8-2.12.5.jar spring
+ -tx-5.3.10.jar commons-fileupload-1.4.jar spring-boot-starter-aop-2.5.5
+ .jar docker-java-api-3.2.13.jar h2-1.4.200.jar jakarta.persistence-api-
+ 2.2.3.jar hibernate-entitymanager-5.2.3.Final.jar spring-cloud-starter-
+ openfeign-4.0.2.jar commons-text-1.10.0.jar commons-codec-1.15.jar jaka
+ rta.activation-api-1.2.2.jar selenium-remote-driver-3.141.59.jar tomcat
+ -embed-el-9.0.53.jar webdrivermanager-5.1.1.jar jboss-logging-3.4.2.Fin
+ al.jar selenium-edge-driver-3.141.59.jar bcpkix-jdk15on-1.64.jar spring
+ -security-crypto-5.5.2.jar commons-collections-3.2.2.jar logback-core-1
+ .2.6.jar jul-to-slf4j-1.7.32.jar hibernate-jpa-2.1-api-1.0.0.Final.jar 
+ spring-context-5.3.10.jar spring-boot-starter-json-2.5.5.jar jcalendar-
+ 1.4.jar spring-aop-5.3.10.jar log4j-to-slf4j-2.14.1.jar jackson-core-2.
+ 12.5.jar spring-core-5.3.10.jar docker-java-3.2.13.jar spring-boot-star
+ ter-2.5.5.jar springfox-core-2.9.2.jar spring-data-jpa-2.5.5.jar spring
+ -boot-autoconfigure-2.5.5.jar spring-boot-starter-tomcat-2.5.5.jar sele
+ nium-support-3.141.59.jar bcprov-jdk15on-1.64.jar commons-exec-1.3.jar 
+ istack-commons-runtime-3.0.12.jar dom4j-1.6.1.jar feign-core-12.1.jar s
+ pring-aspects-5.3.10.jar antlr-2.7.7.jar jcl-over-slf4j-1.7.32.jar sele
+ nium-safari-driver-3.141.59.jar okhttp-3.14.9.jar commons-collections4-
+ 4.4.jar commons-logging-1.2.jar snakeyaml-1.28.jar classmate-1.5.1.jar 
+ spring-webmvc-5.3.10.jar selenium-firefox-driver-3.141.59.jar feign-for
+ m-3.8.0.jar feign-form-spring-3.8.0.jar error_prone_annotations-2.1.3.j
+ ar aspectjweaver-1.9.7.jar selenium-api-3.141.59.jar feign-slf4j-12.1.j
+ ar j2objc-annotations-1.1.jar springfox-spi-2.9.2.jar spring-data-commo
+ ns-2.5.5.jar commons-compress-1.21.jar jsr305-1.3.9.jar jaxb-runtime-2.
+ 3.5.jar HikariCP-4.0.3.jar jakarta.annotation-api-1.3.5.jar tomcat-embe
+ d-websocket-9.0.53.jar jna-5.8.0.jar dom4j-2.1.3.jar swagger-annotation
+ s-1.5.20.jar jakarta.activation-1.2.2.jar jackson-datatype-jsr310-2.12.
+ 5.jar docker-java-transport-3.2.13.jar byte-buddy-1.10.22.jar commons-b
+ eanutils-1.9.4.jar spring-web-5.3.10.jar spring-boot-starter-logging-2.
+ 5.5.jar animal-sniffer-annotations-1.14.jar flatlaf-3.0.jar selenium-ie
+ -driver-3.141.59.jar geronimo-jta_1.1_spec-1.1.1.jar spring-cloud-start
+ er-4.0.2.jar dec-0.1.2.jar jackson-annotations-2.12.5.jar spring-orm-5.
+ 3.10.jar gson-2.8.8.jar springfox-schema-2.9.2.jar jandex-2.2.3.Final.j
+ ar springfox-spring-web-2.9.2.jar tomcat-embed-core-9.0.53.jar docker-j
+ ava-core-3.2.13.jar docker-java-transport-httpclient5-3.2.13.jar httpcl
+ ient5-5.0.4.jar guava-25.0-jre.jar spring-expression-5.3.10.jar hiberna
+ te-core-5.4.32.Final.jar jackson-databind-2.12.5.jar springfox-swagger-
+ common-2.9.2.jar spring-cloud-context-4.0.2.jar selenium-opera-driver-3
+ .141.59.jar slf4j-api-1.7.32.jar swagger-models-1.5.20.jar hibernate-co
+ mmons-annotations-5.0.1.Final.jar spring-security-rsa-1.0.11.RELEASE.ja
+ r jackson-module-parameter-names-2.12.5.jar springfox-swagger-ui-2.9.2.
+ jar springfox-swagger2-2.9.2.jar opencsv-5.7.1.jar logback-classic-1.2.
+ 6.jar spring-beans-5.3.10.jar json-20230227.jar lombok-1.18.26.jar spri
+ ng-boot-2.5.5.jar spring-boot-starter-jdbc-2.5.5.jar spring-plugin-core
+ -1.2.0.RELEASE.jar mapstruct-1.2.0.Final.jar spring-jdbc-5.3.10.jar spr
+ ing-cloud-openfeign-core-4.0.2.jar commons-lang3-3.12.0.jar javassist-3
+ .20.0-GA.jar log4j-api-2.14.1.jar spring-jcl-5.3.10.jar checker-compat-
+ qual-2.0.0.jar commons-io-2.6.jar okio-1.14.0.jar selenium-chrome-drive
+ r-3.141.59.jar httpcore5-5.1.1.jar spring-plugin-metadata-1.2.0.RELEASE
+ .jar
 
