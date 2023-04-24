@@ -1,7 +1,5 @@
 package br.com.lucas.whatsapbot.WebDriver;
 
-
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,22 +10,21 @@ import java.util.*;
 
 public class WebDriverFactory {
 
-
     public static WebDriver webDriver() {
         System.setProperty("webdriver.chrome.driver", "Features/chromedriver.exe");
         var webDriver = new ChromeDriver(returnChromeConfiguration());
-
         webDriver.get(UrlWhatsapp.linkWhatsapp());
-        return saveCookies(webDriver);
+        return webDriver;
     }
 
     public static ChromeOptions returnChromeConfiguration() {
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(false);
+        options.addArguments("user-data-dir=C:/Program Files/Google/Chrome/Application/112.0.5615.138/MEIPreload");
         return options;
     }
 
-    private static  WebDriver saveCookies(WebDriver driver){
+   /** private static  WebDriver saveCookies(WebDriver driver){
         Timer timer = new Timer();
         File file = new File("Features/cookies.txt");
         if(file.exists()){
@@ -55,7 +52,7 @@ public class WebDriverFactory {
 
         }
         return driver;
-    }
+    }**/
 
 
 }
