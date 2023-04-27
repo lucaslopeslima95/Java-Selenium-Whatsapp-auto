@@ -167,9 +167,7 @@ public class ScreenManipulation {
         return returnJSExecutor().executeScript(ScriptsForManipulationNavigator.getScrollSchedulePosition()).toString();
     }
 
-    public void saveSession(){
-        returnJSExecutor().executeScript(ScriptsForManipulationNavigator.saveSession());
-    }
+
 
     public String[] returnArrChar(Message message){
         char[] arr = message.getContent().toCharArray();
