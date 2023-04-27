@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import javax.swing.*;
+
 public class WebDriverFactory {
 
     public static WebDriver webDriver() {
@@ -16,7 +18,8 @@ public class WebDriverFactory {
     public static ChromeOptions returnChromeConfiguration() {
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(false);
-        options.addArguments("user-data-dir=C:/Users/famil/AppData/Local/Google/Chrome/User Data");
+        //C:/Users/famil/AppData/Local/Google/Chrome/User Data"
+        options.addArguments("user-data-dir="+ JOptionPane.showInputDialog("caminho do app data"));
         return options;
     }
 }
