@@ -18,7 +18,6 @@ public class StartApp {
         MainFrame mainFrame = new MainFrame();
         mainFrame.setVisible(true);
         SpringApplication.run(StartApp.class);
-
         Runtime.getRuntime();
     }
 }
