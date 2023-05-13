@@ -20,7 +20,7 @@ public class WebDriverFactory {
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(false);
         //C:/Users/famil/AppData/Local/Google/Chrome/User Data
-        options.addArguments("user-data-dir=C:/Users/famil/AppData/Local/Google/Chrome/User/tData");
+        options.addArguments("user-data-dir=C:/Users/famil/AppData/Local/Google/Chrome/User/Data");
         return options;
     }
     public static String verifyIfConfigured(){
